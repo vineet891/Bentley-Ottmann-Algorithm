@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "includes/geometry.hpp"
 #include <string.h>
 #include <bits/stdc++.h>
 using namespace std;
@@ -13,6 +14,11 @@ int main(int argc, char* argv[]) {
     std::stringstream buffer;
     buffer << f.rdbuf();
     input = buffer.str();
+
+    // Test Code
     cout << input << endl;
+
+    Point p1 (1, 2);  
+
     return 0;
 }

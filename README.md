@@ -5,9 +5,15 @@ Partial Fulfillment of CS F364 Design and Analysis of Algorithms
 ## Phase-1
 
 Implementation of Balanced Binary Search trees for Status and Event Queues.
+- Red Black trees were chosen over AVL self balancing trees as red-black trees have faster insertion and deletion times.
+
 ```
 $ g++ -o main.exe src/main.cpp
 $ ./main.exe test/<test_filename>.txt
+```
+or
+```
+bash run.sh
 ```
 
 ## Reference
