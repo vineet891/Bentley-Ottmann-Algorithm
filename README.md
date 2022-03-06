@@ -26,7 +26,7 @@ Bentley, Jon Louis, and Thomas A. Ottmann. "Algorithms for reporting and countin
 - Include all library code files in ./src/includes directory.
 - Include all test code in ./test directory.
 
-# Project Team - Team 36
+# Project Team - Team
 
 - [Pavan Kumar Reddy Yannam](https://github.com/PavanReddy28/)
 - [Vineet Venkatesh](https://github.com/vineet891/)
