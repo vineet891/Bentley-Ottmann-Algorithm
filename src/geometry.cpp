@@ -19,3 +19,7 @@ Segment::Segment(Point U, Point L) {
 bool Segment::cmp (Segment s2) {
     return (this->UE.getY() > s2.UE.getY()) || ( (this->UE.getY() == s2.UE.getY()) && (this->UE.getX() > s2.UE.getX()) );
 }
+
+bool Segment::isEqual (Segment s) {
+    return (this->UE.getY() == s.UE.getY()) && (this->UE.getX() == s.UE.getX());
+}

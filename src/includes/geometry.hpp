@@ -17,13 +17,14 @@ class Point {
 };
 
 class Segment {
-    Point UE;
-    Point LE;
 
     public:
+    Point UE;
+    Point LE;
 
     Segment(Point U, Point L);
     Segment() = default;
     bool cmp (Segment p2);
+    bool isEqual(Segment p);
 
 };
