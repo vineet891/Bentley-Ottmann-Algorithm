@@ -20,7 +20,7 @@ void RbTree::initNull(NodePtr n, NodePtr p) {
 
 // Print Functions
 void RbTree::printNode(NodePtr node) {
-    cout << "Node - "
+    cout << "Node - ";
     node->data.printSegment();
 }
 
