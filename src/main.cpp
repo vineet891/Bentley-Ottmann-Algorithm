@@ -1,5 +1,6 @@
 #include "includes/tree.hpp"
-// #include <stdio.h>
+#include "includes/statusTree.hpp"
+#include "includes/eventTree.hpp"
 #include <string>
 #include <bits/stdc++.h>
 #include <iostream>
@@ -35,7 +36,7 @@ int main(int argc, char* argv[]) {
             input.push_back(s);            
         }
     }
-    RbTree rb ;
+    RbTree rb;
     for(auto i: input) { 
         i.printSegment(); 
         rb.insertTree(i);
@@ -43,9 +44,7 @@ int main(int argc, char* argv[]) {
 
     rb.inOrder();
     rb.postOrder();
-    rb.preOrder();
-
-    
+    rb.preOrder();    
     
     return 0;
 }
