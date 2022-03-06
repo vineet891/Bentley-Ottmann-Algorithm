@@ -20,9 +20,8 @@ void RbTree::initNull(NodePtr n, NodePtr p) {
 
 // Print Functions
 void RbTree::printNode(NodePtr node) {
-    cout << "Segment : " << endl;
-    cout << "Upper End point: (" << root->data.UE.getX() << "," << root->data.UE.getY() << ")\n";
-    cout << "Lower End point: (" << root->data.LE.getX() << "," << root->data.LE.getY() << ")\n";
+    cout << "Node - "
+    node->data.printSegment();
 }
 
 void RbTree::preOrderHelper(NodePtr root) {

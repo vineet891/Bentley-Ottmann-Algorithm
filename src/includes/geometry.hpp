@@ -26,5 +26,6 @@ class Segment {
     Segment() = default;
     bool cmp (Segment p2);
     bool isEqual(Segment p);
+    void printSegment();
 
 };

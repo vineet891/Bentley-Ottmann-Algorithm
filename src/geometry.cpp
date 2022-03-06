@@ -1,4 +1,5 @@
 #include "includes/geometry.hpp"
+#include <stdio.h>
 using namespace std;
 
 Point::Point(int x1, int y1) {
@@ -22,4 +23,10 @@ bool Segment::cmp (Segment s2) {
 
 bool Segment::isEqual (Segment s) {
     return (this->UE.getY() == s.UE.getY()) && (this->UE.getX() == s.UE.getX());
+}
+
+void Segment::printSegment() {
+    cout << "Segment : " << endl;
+    cout << "Upper End point: (" << this->UE.getX() << "," << this->UE.getY() << ")\n";
+    cout << "Lower End point: (" << this->LE.getX() << "," << this->LE.getY() << ")\n";
 }
