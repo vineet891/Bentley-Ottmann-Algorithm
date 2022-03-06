@@ -1,5 +1,5 @@
 #include "includes/tree.hpp"
-#include <stdout.h>
+#include <iostream>
 using namespace std;
 
 // Constructors and Initializers
@@ -33,6 +33,7 @@ void RbTree::preOrderHelper(NodePtr root) {
 }
 
 void RbTree::preOrder() {
+    cout<< "Preorder Traversal\n";
     this->preOrderHelper(this->root);
 }
 
@@ -45,6 +46,7 @@ void RbTree::postOrderHelper(NodePtr root) {
 }
 
 void RbTree::postOrder() {
+    cout<< "Postorder Traversal\n";
     this->postOrderHelper(this->root);
 }
 
@@ -57,7 +59,9 @@ void RbTree::inOrderHelper(NodePtr root) {
 }
 
 void RbTree::inOrder() {
+    cout<< "Inorder Traversal\n";
     this->inOrderHelper(this->root);
+
 }
 
 // Tree Utils - Tree Operations
@@ -116,7 +120,7 @@ void RbTree::insertHelper(NodePtr node) {
             else {
                 if  (node == node->parent->left) {
                     node = node->parent;
-                    rightRotate(k);
+                    rightRotate(node);
                 }
                 node->parent->parent->color = 1;
                 node->parent->color = 0;
@@ -135,7 +139,7 @@ void RbTree::insertHelper(NodePtr node) {
             else {
                 if  (node == node->parent->right) {
                     node = node->parent;
-                    leftRotate(k);
+                    leftRotate(node);
                 }
                 node->parent->parent->color = 1;
                 node->parent->color = 0;
@@ -149,7 +153,7 @@ void RbTree::insertHelper(NodePtr node) {
 
 // Insertion without balancing
 void RbTree::insertTree(Segment s) {
-    Node node = new Node();
+    Node *node = new Node();
     node->parent = nullptr;
     node->data = s;
     node->left = endNull;

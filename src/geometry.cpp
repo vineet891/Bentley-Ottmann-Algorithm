@@ -1,5 +1,6 @@
 #include "includes/geometry.hpp"
-#include <stdio.h>
+// #include <stdio.h>
+#include <iostream>
 using namespace std;
 
 Point::Point(int x1, int y1) {

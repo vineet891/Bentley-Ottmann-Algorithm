@@ -1,7 +1,8 @@
 #include "includes/tree.hpp"
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+#include <string>
 #include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main(int argc, char* argv[]) {
@@ -14,9 +15,9 @@ int main(int argc, char* argv[]) {
             cout << "File Not Found:" << argv[1] << endl;
             return 0;
         }
-        while(getline(*f, line)) {
-            cout << line;
-        }
+        // while(getline(*f, line)) {
+        //     cout << line;
+        // }
         std::stringstream buffer;
         buffer << f.rdbuf();
         inp_str = buffer.str();
@@ -26,7 +27,7 @@ int main(int argc, char* argv[]) {
         int t;
         for(int i=0; i<n; i++) {
             vector<int> temp;
-            for (int j-0; j<4; j++) {
+            for (int j=0; j<4; j++) {
                 cin >> t;
                 temp.push_back(t);
             }
@@ -34,8 +35,17 @@ int main(int argc, char* argv[]) {
             input.push_back(s);            
         }
     }
+    RbTree rb ;
+    for(auto i: input) { 
+        i.printSegment(); 
+        rb.insertTree(i);
+    }
 
-    for(auto i: input) { i.printSegment(); }
+    rb.inOrder();
+    rb.postOrder();
+    rb.preOrder();
+
+    
     
     return 0;
 }
