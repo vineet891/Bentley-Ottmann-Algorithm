@@ -1,8 +1,10 @@
 #include "geometry.hpp"
+#include <vector>
 using namespace std;
 
 struct Node {
-    Segment data;
+    vector<Segment> segData;
+    Point data;
     Node* parent;
     Node* left;
     Node* right;
@@ -16,7 +18,7 @@ class EventTree {
     private:
     NodePtr endNull;
 
-    // Init Leave null nodes of red black trees
+    // Init leaf null nodes of red black trees
     void initNull(NodePtr node, NodePtr p);
     // Print Helpers
     void preOrderHelper(NodePtr root);
@@ -27,12 +29,13 @@ class EventTree {
     void leftRotate(NodePtr node);
     // Insert Helper
     void insertHelper(NodePtr node);
+    void insertInitTreeHelper(NodePtr ue, Segment s, bool UE);
     //Search Helper
-    NodePtr searchHelper(NodePtr root, Segment key);
+    NodePtr searchHelper(NodePtr root, Point key);
     // Delete Helpers
     void deleteFix(NodePtr node);
     void transplant(NodePtr l, NodePtr r);
-    void deleteHelper(NodePtr root, Segment key);
+    void deleteHelper(NodePtr root, Point key);
 
     public:
     NodePtr root;
@@ -51,10 +54,10 @@ class EventTree {
     NodePtr getPredNode(NodePtr node);
     NodePtr getRoot();
     // Insert Function
-    void insertTree(Segment s);
+    void insertTree(Segment p);
     // Search Function
-    NodePtr searchTree(Segment key);
+    NodePtr searchTree(Point key);
     // Delete Function
-    void deleteNode(Segment data);
+    void deleteNode(Point data);
 
 };

@@ -11,8 +11,11 @@ class Point {
     
     Point(int x, int y);
     Point() = default;
+    bool cmp (Point p2);
+    bool isEqual(Point p);
     int getX();
     int getY();
+    void printPoint();
         
 };
 

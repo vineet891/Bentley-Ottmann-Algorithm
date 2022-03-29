@@ -12,7 +12,7 @@ EventTree::EventTree() {
 }
 
 void EventTree::initNull(NodePtr n, NodePtr p) {
-    n->data = Segment();
+    n->data = Point();
     n->parent = p;
     n->left = nullptr;
     n->right = nullptr;
@@ -20,8 +20,11 @@ void EventTree::initNull(NodePtr n, NodePtr p) {
 
 // Print Functions
 void EventTree::printNode(NodePtr node) {
-    cout << "Node - ";
-    node->data.printSegment();
+    cout << "\nNode - ";
+    node->data.printPoint();
+    for(auto seg: node->segData) {
+        seg.printSegment();
+    }
 }
 
 void EventTree::preOrderHelper(NodePtr root) {
@@ -33,7 +36,7 @@ void EventTree::preOrderHelper(NodePtr root) {
 }
 
 void EventTree::preOrder() {
-    cout<< "Preorder Traversal\n";
+    cout<< "\nPreorder Traversal\n";
     this->preOrderHelper(this->root);
 }
 
@@ -46,7 +49,7 @@ void EventTree::postOrderHelper(NodePtr root) {
 }
 
 void EventTree::postOrder() {
-    cout<< "Postorder Traversal\n";
+    cout<< "\nPostorder Traversal\n";
     this->postOrderHelper(this->root);
 }
 
@@ -59,7 +62,7 @@ void EventTree::inOrderHelper(NodePtr root) {
 }
 
 void EventTree::inOrder() {
-    cout<< "Inorder Traversal\n";
+    cout<< "\nInorder Traversal\n";
     this->inOrderHelper(this->root);
 
 }
@@ -151,47 +154,72 @@ void EventTree::insertHelper(NodePtr node) {
     this->root->color = 0;
 }
 
+void EventTree::insertInitTreeHelper(NodePtr ue, Segment s, bool UE) {
+    Point p = UE? s.UE : s.LE;
+    if(ue==endNull) {
+        cout << "No point found. Adding point to tree...\n";
+        Node *node = new Node();
+        node->parent = nullptr;
+        node->data = p;
+        node->segData.push_back(s);
+        node->left = endNull;
+        node->right = endNull;
+        node->color = 1;
+
+        Node *node1 = new Node();
+        node->parent = nullptr;
+
+        NodePtr temp = nullptr;
+        NodePtr curr = this->root;
+
+        while(curr != endNull) {
+            temp = curr;
+            if(node->data.cmp(curr->data)) {
+                curr = curr->left;
+            } else {
+                curr = curr->right;
+            }
+        }
+
+        node->parent = temp;
+        if(temp == nullptr) {
+            root = node;
+            node->color = 0;
+            return;
+        } else if (node->data.cmp(temp->data)) {
+            temp->left = node;
+        } else {
+            temp->right = node;
+        }
+
+        if (node->parent->parent == nullptr) {
+            return;
+        }
+
+        insertHelper(node);
+
+    } else {
+        cout << "Point found. Updating node by adding segment...\n";
+        ue->segData.push_back(s);        
+    }
+}
+
 // Insertion without balancing
 void EventTree::insertTree(Segment s) {
-    Node *node = new Node();
-    node->parent = nullptr;
-    node->data = s;
-    node->left = endNull;
-    node->right = endNull;
-    node->color = 1;
 
-    NodePtr temp = nullptr;
-    NodePtr curr = this->root;
+    NodePtr ue = this->searchTree(s.UE);
+    NodePtr le = this->searchTree(s.LE);
 
-    while(curr != endNull) {
-        temp = curr;
-        if(node->data.cmp(curr->data)) {
-            curr = curr->left;
-        } else {
-            curr = curr->right;
-        }
-    }
+    // Handling Upper Endpoint
+    insertInitTreeHelper(ue, s, true);
 
-    node->parent = temp;
-    if(temp == nullptr) {
-        root = node;
-        node->color = 0;
-        return;
-    } else if (node->data.cmp(temp->data)) {
-        temp->left = node;
-    } else {
-        temp->right = node;
-    }
-
-    if (node->parent->parent == nullptr) {
-        return;
-    }
-
-    insertHelper(node);
+    // Handling Lower End Point
+    insertInitTreeHelper(le, s, false);
+    
 }
 
 // Search Function
-NodePtr EventTree::searchHelper(NodePtr root, Segment key) {
+NodePtr EventTree::searchHelper(NodePtr root, Point key) {
     if (root == endNull || key.isEqual(root->data)) {
         return root;
     }
@@ -202,6 +230,6 @@ NodePtr EventTree::searchHelper(NodePtr root, Segment key) {
     return this->searchHelper(root->right, key);
 }
 
-NodePtr EventTree::searchTree(Segment s) {
+NodePtr EventTree::searchTree(Point s) {
     return this->searchHelper(this->root, s);
 }

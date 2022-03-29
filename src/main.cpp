@@ -1,5 +1,3 @@
-#include "includes/tree.hpp"
-#include "includes/statusTree.hpp"
 #include "includes/eventTree.hpp"
 #include <string>
 #include <bits/stdc++.h>
@@ -9,7 +7,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
     string inp_str = "", line;
     int n;
-    vector<Segment> input;
+    vector<Segment> segments;
     if(argv[1]=="-file") {
         ifstream f(argv[2]);
         if (!f) {
@@ -33,18 +31,19 @@ int main(int argc, char* argv[]) {
                 temp.push_back(t);
             }
             Segment s = Segment( Point(temp[0], temp[1]), Point(temp[2], temp[3]) );
-            input.push_back(s);            
+            segments.push_back(s);            
         }
     }
-    RbTree rb;
-    for(auto i: input) { 
+    EventTree et;
+    for(auto i: segments) { 
+        cout << "\n";
         i.printSegment(); 
-        rb.insertTree(i);
+        et.insertTree(i);
     }
 
-    rb.inOrder();
-    rb.postOrder();
-    rb.preOrder();    
+    et.inOrder();
+    et.postOrder();
+    et.preOrder();    
     
     return 0;
 }
