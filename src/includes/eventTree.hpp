@@ -2,20 +2,22 @@
 #include <vector>
 using namespace std;
 
-struct Node {
+struct Node
+{
     vector<Segment> segData;
     Point data;
-    Node* parent;
-    Node* left;
-    Node* right;
+    Node *parent;
+    Node *left;
+    Node *right;
     int color;
 };
 
 typedef Node *NodePtr;
 
-class EventTree {
+class EventTree
+{
 
-    private:
+private:
     NodePtr endNull;
 
     // Init leaf null nodes of red black trees
@@ -30,16 +32,16 @@ class EventTree {
     // Insert Helper
     void insertHelper(NodePtr node);
     void insertInitTreeHelper(NodePtr ue, Segment s, bool UE);
-    //Search Helper
+    // Search Helper
     NodePtr searchHelper(NodePtr root, Point key);
     // Delete Helpers
     void deleteFix(NodePtr node);
     void transplant(NodePtr l, NodePtr r);
     void deleteHelper(NodePtr root, Point key);
 
-    public:
+public:
     NodePtr root;
-    
+
     // Constructor
     EventTree();
     // Print Functions
@@ -59,5 +61,4 @@ class EventTree {
     NodePtr searchTree(Point key);
     // Delete Function
     void deleteNode(Point data);
-
 };
