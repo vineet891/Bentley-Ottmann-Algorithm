@@ -1,0 +1,57 @@
+\hypertarget{event_tree_8hpp_source}{}\doxysection{event\+Tree.\+hpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}geometry.hpp"{}}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{10 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_node}{Node}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     vector<Segment> segData;}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_point}{Point}} data;}
+\DoxyCodeLine{14     \mbox{\hyperlink{struct_node}{Node}} *parent;}
+\DoxyCodeLine{15     \mbox{\hyperlink{struct_node}{Node}} *left;}
+\DoxyCodeLine{16     \mbox{\hyperlink{struct_node}{Node}} *right;}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} color;}
+\DoxyCodeLine{18 \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{typedef} \mbox{\hyperlink{struct_node}{Node}} *\mbox{\hyperlink{struct_node}{NodePtr}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{class_event_tree}{EventTree}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{private}:}
+\DoxyCodeLine{26     \mbox{\hyperlink{struct_node}{NodePtr}} endNull;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} initNull(\mbox{\hyperlink{struct_node}{NodePtr}} node, \mbox{\hyperlink{struct_node}{NodePtr}} p);}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} preOrderHelper(\mbox{\hyperlink{struct_node}{NodePtr}} root);}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} postOrderHelper(\mbox{\hyperlink{struct_node}{NodePtr}} root);}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} inOrderHelper(\mbox{\hyperlink{struct_node}{NodePtr}} root);}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} rightRotate(\mbox{\hyperlink{struct_node}{NodePtr}} node);}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} leftRotate(\mbox{\hyperlink{struct_node}{NodePtr}} node);}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} insertHelper(\mbox{\hyperlink{struct_node}{NodePtr}} node);}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} insertInitTreeHelper(\mbox{\hyperlink{struct_node}{NodePtr}} ue, \mbox{\hyperlink{class_segment}{Segment}} s, \textcolor{keywordtype}{bool} UE);}
+\DoxyCodeLine{41     \mbox{\hyperlink{struct_node}{NodePtr}} searchHelper(\mbox{\hyperlink{struct_node}{NodePtr}} root, \mbox{\hyperlink{class_point}{Point}} key);}
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} deleteFix(\mbox{\hyperlink{struct_node}{NodePtr}} node);}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} transplant(\mbox{\hyperlink{struct_node}{NodePtr}} l, \mbox{\hyperlink{struct_node}{NodePtr}} r);}
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} deleteHelper(\mbox{\hyperlink{struct_node}{NodePtr}} root, \mbox{\hyperlink{class_point}{Point}} key);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \mbox{\hyperlink{struct_node}{NodePtr}} root;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51     \mbox{\hyperlink{class_event_tree_ab434268c1f094f4499450869ab6271f9}{EventTree}}();}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_event_tree_a6534594f961bb13528371173a503ca8b}{printNode}}(\mbox{\hyperlink{struct_node}{NodePtr}} node);}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} preOrder();}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} postOrder();}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} inOrder();}
+\DoxyCodeLine{58     \mbox{\hyperlink{struct_node}{NodePtr}} \mbox{\hyperlink{class_event_tree_a75aca8390f6f7604c703c9375d8176c2}{getMinNode}}(\mbox{\hyperlink{struct_node}{NodePtr}} node);}
+\DoxyCodeLine{59     \mbox{\hyperlink{struct_node}{NodePtr}} getMaxNode(\mbox{\hyperlink{struct_node}{NodePtr}} node);}
+\DoxyCodeLine{60     \mbox{\hyperlink{struct_node}{NodePtr}} getSuccNode(\mbox{\hyperlink{struct_node}{NodePtr}} node);}
+\DoxyCodeLine{61     \mbox{\hyperlink{struct_node}{NodePtr}} getPredNode(\mbox{\hyperlink{struct_node}{NodePtr}} node);}
+\DoxyCodeLine{62     \mbox{\hyperlink{struct_node}{NodePtr}} getRoot();}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_event_tree_a501542615e009410c85a69134e24d54a}{insertTree}}(\mbox{\hyperlink{class_segment}{Segment}} p);}
+\DoxyCodeLine{66     \mbox{\hyperlink{struct_node}{NodePtr}} \mbox{\hyperlink{class_event_tree_ad8cfe719c561c4b5d1c95f898271caff}{searchTree}}(\mbox{\hyperlink{class_point}{Point}} key);}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_event_tree_a094020a41908f9f588d781184b5d0060}{deleteNode}}(\mbox{\hyperlink{class_point}{Point}} data);}
+\DoxyCodeLine{69 \};}
+
+\end{DoxyCode}

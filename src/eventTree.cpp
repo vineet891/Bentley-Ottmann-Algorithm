@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-// Constructors and Initializers
+/// Constructors and Initializers
 EventTree::EventTree()
 {
     endNull = new Node();
@@ -20,7 +20,7 @@ void EventTree::initNull(NodePtr n, NodePtr p)
     n->right = nullptr;
 }
 
-// Print Functions
+/// Print Functions
 void EventTree::printNode(NodePtr node)
 {
     cout << "\nNode - ";
@@ -79,7 +79,7 @@ void EventTree::inOrder()
     this->inOrderHelper(this->root);
 }
 
-// Tree Utils - Tree Operations
+/// Tree Utils - Tree Operations
 void EventTree::rightRotate(NodePtr node)
 {
     NodePtr temp = node->left;
@@ -130,8 +130,8 @@ void EventTree::leftRotate(NodePtr node)
     node->parent = temp;
 }
 
-// Insert Fucntions
-// Balancing tree after insertion
+/// Insert Fucntions
+/// Balancing tree after insertion
 void EventTree::insertHelper(NodePtr node)
 {
     NodePtr temp;
@@ -141,7 +141,7 @@ void EventTree::insertHelper(NodePtr node)
         if (node->parent == node->parent->parent->right)
         {
             temp = node->parent->parent->left;
-            // Case-1
+            /// Case-1
             if (temp->color == 1)
             {
                 temp->color = 1;
@@ -149,7 +149,7 @@ void EventTree::insertHelper(NodePtr node)
                 node->parent->color = 0;
                 node = node->parent->parent;
             }
-            // Case-2
+            /// Case-2
             else
             {
                 if (node == node->parent->left)
@@ -165,7 +165,7 @@ void EventTree::insertHelper(NodePtr node)
         else
         {
             temp = node->parent->parent->right;
-            // Case-3
+            /// Case-3
             if (temp->color == 1)
             {
                 temp->color = 0;
@@ -173,7 +173,7 @@ void EventTree::insertHelper(NodePtr node)
                 node->parent->color = 0;
                 node = node->parent->parent;
             }
-            // Case-4
+            /// Case-4
             else
             {
                 if (node == node->parent->right)
@@ -257,21 +257,21 @@ void EventTree::insertInitTreeHelper(NodePtr ue, Segment s, bool UE)
     }
 }
 
-// Insertion without balancing
+/// Insertion without balancing
 void EventTree::insertTree(Segment s)
 {
 
     NodePtr ue = this->searchTree(s.UE);
     NodePtr le = this->searchTree(s.LE);
 
-    // Handling Upper Endpoint
+    /// Handling Upper Endpoint
     insertInitTreeHelper(ue, s, true);
 
-    // Handling Lower End Point
+    /// Handling Lower End Point
     insertInitTreeHelper(le, s, false);
 }
 
-// Search Function
+/// Search Function
 NodePtr EventTree::searchHelper(NodePtr root, Point key)
 {
     if (root == endNull || key.isEqual(root->data))
