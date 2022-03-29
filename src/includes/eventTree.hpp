@@ -2,6 +2,11 @@
 #include <vector>
 using namespace std;
 
+/**
+ * @file evenTree.hpp
+ * Class containing event queue implementation using red-black balanced binary search trees. * 
+ * 
+ */
 struct Node
 {
     vector<Segment> segData;
