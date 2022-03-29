@@ -52,6 +52,14 @@ int main(int argc, char *argv[])
     et.inOrder();
     et.postOrder();
     et.preOrder();
+    
+    et.deleteNode(segments[0].LE);
+    cout << "Deleted Point - ";
+    segments[0].LE.printPoint();
+    
+    et.inOrder();
+    et.postOrder();
+    et.preOrder();
 
     return 0;
 }

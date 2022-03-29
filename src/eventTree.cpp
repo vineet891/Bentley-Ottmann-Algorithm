@@ -20,7 +20,7 @@ void EventTree::initNull(NodePtr n, NodePtr p)
     n->right = nullptr;
 }
 
-/// Print Functions
+/// Print Node - Point and Segment
 void EventTree::printNode(NodePtr node)
 {
     cout << "\nNode - ";
@@ -31,6 +31,7 @@ void EventTree::printNode(NodePtr node)
     }
 }
 
+/// Pre Order Traversal Helper FUnction
 void EventTree::preOrderHelper(NodePtr root)
 {
     if (root != endNull)
@@ -194,16 +195,16 @@ void EventTree::insertHelper(NodePtr node)
     this->root->color = 0;
 }
 
-void EventTree::insertInitTreeHelper(NodePtr ue, Segment s, bool UE)
+void EventTree::insertInitTreeHelper(NodePtr ue, Segment temp, bool UE)
 {
-    Point p = UE ? s.UE : s.LE;
+    Point p = UE ? temp.UE : temp.LE;
     if (ue == endNull)
     {
         cout << "No point found. Adding point to tree...\n";
         Node *node = new Node();
         node->parent = nullptr;
         node->data = p;
-        node->segData.push_back(s);
+        node->segData.push_back(temp);
         node->left = endNull;
         node->right = endNull;
         node->color = 1;
@@ -253,25 +254,25 @@ void EventTree::insertInitTreeHelper(NodePtr ue, Segment s, bool UE)
     else
     {
         cout << "Point found. Updating node by adding segment...\n";
-        ue->segData.push_back(s);
+        ue->segData.push_back(temp);
     }
 }
 
 /// Insertion without balancing
-void EventTree::insertTree(Segment s)
+void EventTree::insertTree(Segment temp)
 {
 
-    NodePtr ue = this->searchTree(s.UE);
-    NodePtr le = this->searchTree(s.LE);
+    NodePtr ue = this->searchTree(temp.UE);
+    NodePtr le = this->searchTree(temp.LE);
 
     /// Handling Upper Endpoint
-    insertInitTreeHelper(ue, s, true);
+    insertInitTreeHelper(ue, temp, true);
 
     /// Handling Lower End Point
-    insertInitTreeHelper(le, s, false);
+    insertInitTreeHelper(le, temp, false);
 }
 
-/// Search Function
+/// Search Function Helper
 NodePtr EventTree::searchHelper(NodePtr root, Point key)
 {
     if (root == endNull || key.isEqual(root->data))
@@ -286,7 +287,181 @@ NodePtr EventTree::searchHelper(NodePtr root, Point key)
     return this->searchHelper(root->right, key);
 }
 
-NodePtr EventTree::searchTree(Point s)
+/// Search Function
+NodePtr EventTree::searchTree(Point temp)
 {
-    return this->searchHelper(this->root, s);
+    return this->searchHelper(this->root, temp);
+}
+
+/// Get the minimum node.
+NodePtr EventTree::getMinNode(NodePtr node)
+{
+    while (node->left != endNull)
+    {
+        node = node->left;
+    }
+    return node;
+}
+
+/// Get the maximum node.
+NodePtr EventTree::getMaxNode(NodePtr node)
+{
+    while (node->right != endNull)
+    {
+        node = node->right;
+    }
+    return node;
+}
+
+/// Transplant the tree - delete function helper
+void EventTree::transplant(NodePtr l, NodePtr r)
+{
+    if (l->parent == nullptr)
+    {
+        root = r;
+    }
+    else if (l == l->parent->left)
+    {
+        l->parent->left = r;
+    }
+    else
+    {
+        l->parent->right = r;
+    }
+    r->parent = l->parent;
+}
+
+/// Delete Function
+void EventTree::deleteHelper(NodePtr root, Point key)
+{
+    NodePtr temp = this->searchTree(key);
+
+    if (temp == endNull)
+    {
+        cout << "Given point not on the Event Tree.";
+        return;
+    }
+
+    NodePtr temp1 = temp;
+    NodePtr temp2;
+    int color = temp->color;
+    if (temp->left == endNull)
+    {
+        temp2 = temp->right;
+        transplant(temp, temp->right);
+    }
+    else if (temp->right == endNull)
+    {
+        temp2 = temp->left;
+        this->transplant(temp, temp->left);
+    }
+    else
+    {
+        temp1 = getMinNode(temp->right);
+        color = temp1->color;
+        temp2 = temp1->right;
+        if (temp1->parent == temp)
+        {
+            temp2->parent = temp1;
+        }
+        else
+        {
+            transplant(temp1, temp1->right);
+            temp1->right = temp->right;
+            temp1->right->parent = temp1;
+        }
+
+        transplant(temp, temp1);
+        temp1->left = temp->left;
+        temp1->left->parent = temp1;
+        temp1->color = temp->color;
+    }
+
+    delete temp;
+    if (color == 0)
+    {
+        deleteFix(temp2);
+    }
+}
+
+/// Delete Fix Function
+void EventTree::deleteFix(NodePtr node)
+{
+    NodePtr temp;
+    while (node != root && node->color == 0)
+    {
+        if (node == node->parent->left)
+        {
+            temp = node->parent->right;
+            if (temp->color == 1)
+            {
+                temp->color = 0;
+                node->parent->color = 1;
+                leftRotate(node->parent);
+                temp = node->parent->right;
+            }
+
+            if (temp->left->color == 0 && temp->right->color == 0)
+            {
+                temp->color = 1;
+                node = node->parent;
+            }
+            else
+            {
+                if (temp->right->color == 0)
+                {
+                    temp->left->color = 0;
+                    temp->color = 1;
+                    rightRotate(temp);
+                    temp = node->parent->right;
+                }
+
+                temp->color = node->parent->color;
+                node->parent->color = 0;
+                temp->right->color = 0;
+                leftRotate(node->parent);
+                node = root;
+            }
+        }
+        else
+        {
+            temp = node->parent->left;
+            if (temp->color == 1)
+            {
+                temp->color = 0;
+                node->parent->color = 1;
+                rightRotate(node->parent);
+                temp = node->parent->left;
+            }
+
+            if (temp->right->color == 0 && temp->right->color == 0)
+            {
+                temp->color = 1;
+                node = node->parent;
+            }
+            else
+            {
+                if (temp->left->color == 0)
+                {
+                    temp->right->color = 0;
+                    temp->color = 1;
+                    leftRotate(temp);
+                    temp = node->parent->left;
+                }
+
+                temp->color = node->parent->color;
+                node->parent->color = 0;
+                temp->left->color = 0;
+                rightRotate(node->parent);
+                node = root;
+            }
+        }
+    }
+    node->color = 0;
+}
+
+/// Delete Function
+void EventTree::deleteNode(Point data)
+{
+    deleteHelper(this->root, data);
 }
