@@ -7,6 +7,8 @@ using namespace std;
  * Class containing status queue implementation using red-black balanced binary search trees. * 
  * 
  */
+
+/// Description of struct Status
 struct Status
 {
     Segment data;
@@ -18,6 +20,8 @@ struct Status
 };
 
 typedef Status *StatusPtr;
+
+/// Description of class Status Tree
 
 class StatusTree
 {
@@ -58,17 +62,26 @@ public:
     /// Constructor
     StatusTree();
 
-    /// Print Functions - VIsualization
+    /// Print Functions - Visualization
+
     void printSNode(StatusPtr node);
+    /// Print Functions - Visualization
     void preOrder();
+    /// Print Functions - Visualization
     void postOrder();
+    /// Print Functions - Visualization
     void inOrder();
+    /// Print Functions - Visualization
     
-    /// Tree Utils
+    /// Tree Utils - 
     StatusPtr getMinSNode(StatusPtr node);
+    /// Tree Utils - 
     StatusPtr getMaxSNode(StatusPtr node);
+    /// Tree Utils - 
     StatusPtr getSuccSNode(StatusPtr node);
+    /// Tree Utils - 
     StatusPtr getPredSNode(StatusPtr node);
+    /// Tree Utils - 
     StatusPtr getRoot();
 
     /// Search
@@ -84,7 +97,7 @@ public:
     void swapSNode(StatusPtr n1, StatusPtr n2);
 
     /// Update Operations
-    void upperEndPoint(StatusPtr pu);   // Add/Insert segment to status and find the intersections with neighbors in the status queue. 
-    void intersectPoint(StatusPtr pi);  // Swap the positions of segments in the status queue and find intersections with the new neighbors.
-    void lowerEndPoint(StatusPtr pl);   // Delete the segment from status and find the intersection of neighbors of the segment we removed.
+    void upperEndPoint(StatusPtr s);   // Add/Insert segment to status and find the intersections with neighbors in the status queue. 
+    void intersectPoint(StatusPtr s1, StatusPtr s2);  // Swap the positions of segments in the status queue and find intersections with the new neighbors.
+    void lowerEndPoint(StatusPtr s);   // Delete the segment from status and find the intersection of neighbors of the segment we removed.
 };

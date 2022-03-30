@@ -1,7 +1,7 @@
-#include "includes/sweepLine.hpp"
 #include <string>
 #include <bits/stdc++.h>
 #include <iostream>
+#include "includes/sweepLine.hpp"
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -71,24 +71,19 @@ int main(int argc, char *argv[])
         }
         cout << "Done reading input from user.\n";
     }
-
-    /// Inserting to Event Tree
-    cout << "Inserting into Event Tree...\n";
-    EventTree et;
-    for (auto i : segments)
-    {
-        et.insertTree(i);
-    }
-    cout << "\nEvent Tree Ready.\n";
-
+    
     /// Sweep Line
+    SweepLine sweep = SweepLine(segments);
+    vector<Point> res = sweep.findIntersection();
 
+    cout << "Final Intersection points :\n";
+    for(auto p:res) { p.printPoint(); }
 
     /// Verbose Statments
     if (!string(argv[2]).compare("-v"))
     {
         cout << "\nEvent Tree -\n";
-        et.inOrder();
+        sweep.getEventTree().inOrder();
     }    
 
     return 0;

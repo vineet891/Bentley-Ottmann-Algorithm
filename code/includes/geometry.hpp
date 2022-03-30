@@ -1,5 +1,6 @@
 using namespace std;
 
+/// Description of Point class
 class Point
 {
     int x;
@@ -18,16 +19,25 @@ public:
     void printPoint();
 };
 
+/// Description of Segment Class
+
 class Segment
 {
 
 public:
     Point UE;
     Point LE;
+    double slope;
+    double c;
 
     Segment(Point U, Point L);
     Segment() = default;
     bool cmp(Segment p2);
     bool isEqual(Segment p);
     void printSegment();
+    double slopeCal(Point U, Point L);
+    double getVal(Point p);
+    bool isPresent(Point p);
+    Point intersection(Segment s);
+
 };
