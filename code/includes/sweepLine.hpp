@@ -4,11 +4,14 @@
 #include "statusTree.hpp"
 using namespace std;
 
+/// Description of struct IntersectPoints
+
 struct IntersectPoints {
     Point p;
     vector<Segment> segments;
 };
 
+/// Description of class SweepLine
 class SweepLine
 {
 private:

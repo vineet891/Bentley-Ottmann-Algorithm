@@ -6,10 +6,13 @@
 using namespace std;
 
 /**
- * @file eventTree.hpp
- * Class containing event queue implementation using red-black balanced binary search trees. * 
+ * @file statusTree.hpp
+ * Class containing status queue implementation using red-black balanced binary search trees. * 
  * 
  */
+
+
+/// Class containing event queue implementation using red-black balanced binary search trees. 
 struct Event
 {
     vector<Segment> upperSeg;
@@ -24,7 +27,7 @@ struct Event
 
 typedef Event *EventPtr;
 
-
+/// Description of EventTree class
 class EventTree
 {
 
@@ -33,7 +36,7 @@ private:
 
     /// Init leaf null nodes of red black trees
     void initNull(EventPtr node, EventPtr p);
-    /// Print Helpers
+    /// Print Helpers - helper function 
     void preOrderHelper(EventPtr root);
     void postOrderHelper(EventPtr root);
     void inOrderHelper(EventPtr root);
@@ -57,14 +60,41 @@ public:
     EventTree();
     /// Print Functions
     void printNode(EventPtr node);
+    /// Function which prints the preorder traversal of the event tree.
+    /// @returns Doesn't return anything.
+    /// @see postOrder() inOrder()
     void preOrder();
+    /// Function which prints the postorder traversal of the event tree.
+    /// @returns Doesn't return anything.
+    /// @see preOrder() inOrder()
     void postOrder();
+    /// Function which prints the inorder traversal of the event tree.
+    /// @returns Doesn't return anything.
+    ///@see preOrder() postOrder()
     void inOrder();
-    /// Tree Utils
+    /// Tree Utils -
+    /// Get min Node 
+    /// @param node Root node
+    /// @see getMaxNode() getSuccNode() getPredNode()
     EventPtr getMinNode(EventPtr node);
+    /// Tree Utils -
+    /// Get max Node 
+    /// @param node Root node
+    /// @see getMaxNode() getSuccNode() getPredNode()
     EventPtr getMaxNode(EventPtr node);
+    /// Tree Utils - 
+    /// Get Successive Node 
+    /// @param node Root node
+    /// @see getMaxNode() getSuccNode() getPredNode()
     EventPtr getSuccNode(EventPtr node);
+    /// Tree Utils -
+    /// Get Predecessor Node 
+    /// @param node Root node
+    /// @see getMaxNode() getSuccNode() getPredNode()
     EventPtr getPredNode(EventPtr node);
+    /// Tree Utils -
+    /// Get root 
+    /// @see getMaxNode() getSuccNode() getPredNode()
     EventPtr getRoot();
     bool isEmpty();
     /// Insert Function
