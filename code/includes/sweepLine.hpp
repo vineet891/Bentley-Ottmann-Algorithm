@@ -20,6 +20,7 @@ private:
     EventTree events;    
 
     /// Initializing the event tree
+    /// @param segments segments to initialize the event tree.
     void initEventHelper(vector<Segment> segments);    
 
     /// Main Function
@@ -30,13 +31,16 @@ public:
     SweepLine();
     SweepLine(vector<Segment> segments);
 
-    /// Accessor FUnctions
+    /// Accessor Functions
+    /// @returns Accessory function to return events.
     EventTree getEventTree();
 
-    /// Bentley Ottmann main algorihtm function
+    /// Bentley Ottmann main algorithm function
+    /// Find the intersection points
     vector<IntersectPoints> findIntersection();
 
-    /// Handling the different cases of event points
+    /// Handling the different cases of event points 
+    /// @param e Event e to be handled
     vector<IntersectPoints> handleEventPoint(Event e);
 
 };

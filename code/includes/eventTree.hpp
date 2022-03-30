@@ -97,10 +97,13 @@ public:
     /// @see getMaxNode() getSuccNode() getPredNode()
     EventPtr getRoot();
     bool isEmpty();
-    /// Insert Function
+    /// Insert Function - Insert into tree
+    /// @param p Takes segment p as input and inserts it into the tree.
     void insertTree(Segment p);
-    /// Search Function
+    /// Search Function used to search for a node in the tree
+    /// @param key The point to search for.
     EventPtr searchTree(Point key);
-    /// Delete Function
+    /// Delete Function used to delete node from the tree
+    /// @param data Node to be deleted.
     void deleteNode(Point data);
 };

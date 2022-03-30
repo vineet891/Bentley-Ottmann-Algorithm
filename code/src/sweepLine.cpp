@@ -22,7 +22,7 @@ EventTree SweepLine::getEventTree() {
     return this->events;
 }
 
-/// Bentley Ottmann main algorihtm function
+/// Bentley Ottmann main algorithm function
 vector<IntersectPoints> SweepLine::findIntersection() {
     vector<IntersectPoints> res;
     while(!events.isEmpty()) {
