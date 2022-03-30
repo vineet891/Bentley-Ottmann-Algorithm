@@ -1,6 +1,7 @@
 #pragma once
 
 #include "geometry.hpp"
+#include "constant.hpp"
 #include <vector>
 using namespace std;
 

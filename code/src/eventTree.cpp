@@ -200,7 +200,7 @@ void EventTree::insertInitTreeHelper(EventPtr ue, Segment temp, bool UE)
     Point p = UE ? temp.UE : temp.LE;
     if (ue == endNull)
     {
-        cout << "No point found. Adding point to tree...\n";
+        // cout << "No point found. Adding point to tree...\n";
         Event *node = new Event();
         node->parent = nullptr;
         node->data = p;
@@ -253,7 +253,7 @@ void EventTree::insertInitTreeHelper(EventPtr ue, Segment temp, bool UE)
     }
     else
     {
-        cout << "Point found. Updating node by adding segment...\n";
+        // cout << "Point found. Updating node by adding segment...\n";
         ue->segData.push_back(temp);
     }
 }
