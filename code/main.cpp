@@ -19,8 +19,7 @@ int main(int argc, char *argv[])
         v = 3;
     }
 
-    
-    /// Reading input: 
+    /// Reading input:
     if (!string(argv[1]).compare("-f"))
     {
         /// Reading input from test case files
@@ -67,7 +66,7 @@ int main(int argc, char *argv[])
                 cin >> t;
                 temp.push_back(t);
             }
-            Segment s = temp[1]>temp[3]? Segment(Point(temp[0], temp[1]), Point(temp[2], temp[3])) : Segment(Point(temp[2], temp[3]), Point(temp[0], temp[1]));
+            Segment s = temp[1] > temp[3] ? Segment(Point(temp[0], temp[1]), Point(temp[2], temp[3])) : Segment(Point(temp[2], temp[3]), Point(temp[0], temp[1]));
             segments.push_back(s);
         }
         cout << "Done reading input from user.\n";
@@ -82,11 +81,15 @@ int main(int argc, char *argv[])
     }
     cout << "\nEvent Tree Ready.\n";
 
+    /// Sweep Line
+
+
     /// Verbose Statments
     if (!string(argv[2]).compare("-v"))
     {
+        cout << "\nEvent Tree -\n";
         et.inOrder();
-    }
+    }    
 
     return 0;
 }
