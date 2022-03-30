@@ -1,5 +1,4 @@
-#include "includes/eventTree.hpp"
-#include "includes/statusTree.hpp"
+#include "includes/sweepLine.hpp"
 #include <string>
 #include <bits/stdc++.h>
 #include <iostream>
@@ -7,17 +6,30 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    int n;
+    int n, v;
     vector<Segment> segments;
-    if (!string(argv[1]).compare("-file"))
+
+    /// Checking verbose argument option
+    if (string(argv[2]).compare("-v"))
+    {
+        v = 2;
+    }
+    else
+    {
+        v = 3;
+    }
+
+    
+    /// Reading input: 
+    if (!string(argv[1]).compare("-f"))
     {
         /// Reading input from test case files
-        cout << "Reading input from test case file " << argv[2] << "...." << endl;
+        cout << "Reading input from test case file " << argv[v] << "...." << endl;
         ifstream f;
-        f.open(argv[2]);
+        f.open(argv[v]);
         if (!f)
         {
-            cerr << "File Not Found:" << argv[1] << endl;
+            cerr << "File Not Found:" << argv[v] << endl;
             return 0;
         }
 
@@ -55,7 +67,7 @@ int main(int argc, char *argv[])
                 cin >> t;
                 temp.push_back(t);
             }
-            Segment s = Segment(Point(temp[0], temp[1]), Point(temp[2], temp[3]));
+            Segment s = temp[1]>temp[3]? Segment(Point(temp[0], temp[1]), Point(temp[2], temp[3])) : Segment(Point(temp[2], temp[3]), Point(temp[0], temp[1]));
             segments.push_back(s);
         }
         cout << "Done reading input from user.\n";
@@ -66,12 +78,15 @@ int main(int argc, char *argv[])
     EventTree et;
     for (auto i : segments)
     {
-        cout << "\n";
-        i.printSegment();
         et.insertTree(i);
     }
-    et.inOrder();
     cout << "\nEvent Tree Ready.\n";
+
+    /// Verbose Statments
+    if (!string(argv[2]).compare("-v"))
+    {
+        et.inOrder();
+    }
 
     return 0;
 }
