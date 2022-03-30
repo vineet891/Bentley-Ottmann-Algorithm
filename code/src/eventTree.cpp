@@ -1,18 +1,18 @@
-#include "includes/eventTree.hpp"
+#include "../includes/eventTree.hpp"
 #include <iostream>
 using namespace std;
 
 /// Constructors and Initializers
 EventTree::EventTree()
 {
-    endNull = new Node();
+    endNull = new Event();
     endNull->color = 0;
     endNull->left = nullptr;
     endNull->right = nullptr;
     root = endNull;
 }
 
-void EventTree::initNull(NodePtr n, NodePtr p)
+void EventTree::initNull(EventPtr n, EventPtr p)
 {
     n->data = Point();
     n->parent = p;
@@ -20,8 +20,8 @@ void EventTree::initNull(NodePtr n, NodePtr p)
     n->right = nullptr;
 }
 
-/// Print Node - Point and Segment
-void EventTree::printNode(NodePtr node)
+/// Print Event - Point and Segment
+void EventTree::printNode(EventPtr node)
 {
     cout << "\nNode - ";
     node->data.printPoint();
@@ -32,7 +32,7 @@ void EventTree::printNode(NodePtr node)
 }
 
 /// Pre Order Traversal Helper FUnction
-void EventTree::preOrderHelper(NodePtr root)
+void EventTree::preOrderHelper(EventPtr root)
 {
     if (root != endNull)
     {
@@ -48,7 +48,7 @@ void EventTree::preOrder()
     this->preOrderHelper(this->root);
 }
 
-void EventTree::postOrderHelper(NodePtr root)
+void EventTree::postOrderHelper(EventPtr root)
 {
     if (root != endNull)
     {
@@ -64,7 +64,7 @@ void EventTree::postOrder()
     this->postOrderHelper(this->root);
 }
 
-void EventTree::inOrderHelper(NodePtr root)
+void EventTree::inOrderHelper(EventPtr root)
 {
     if (root != endNull)
     {
@@ -81,9 +81,9 @@ void EventTree::inOrder()
 }
 
 /// Tree Utils - Tree Operations
-void EventTree::rightRotate(NodePtr node)
+void EventTree::rightRotate(EventPtr node)
 {
-    NodePtr temp = node->left;
+    EventPtr temp = node->left;
     node->left = temp->right;
     if (temp->right != endNull)
     {
@@ -106,9 +106,9 @@ void EventTree::rightRotate(NodePtr node)
     node->parent = temp;
 }
 
-void EventTree::leftRotate(NodePtr node)
+void EventTree::leftRotate(EventPtr node)
 {
-    NodePtr temp = node->right;
+    EventPtr temp = node->right;
     node->right = temp->left;
     if (temp->left != endNull)
     {
@@ -133,9 +133,9 @@ void EventTree::leftRotate(NodePtr node)
 
 /// Insert Fucntions
 /// Balancing tree after insertion
-void EventTree::insertHelper(NodePtr node)
+void EventTree::insertHelper(EventPtr node)
 {
-    NodePtr temp;
+    EventPtr temp;
 
     while (node->parent->color == 1)
     {
@@ -195,13 +195,13 @@ void EventTree::insertHelper(NodePtr node)
     this->root->color = 0;
 }
 
-void EventTree::insertInitTreeHelper(NodePtr ue, Segment temp, bool UE)
+void EventTree::insertInitTreeHelper(EventPtr ue, Segment temp, bool UE)
 {
     Point p = UE ? temp.UE : temp.LE;
     if (ue == endNull)
     {
         cout << "No point found. Adding point to tree...\n";
-        Node *node = new Node();
+        Event *node = new Event();
         node->parent = nullptr;
         node->data = p;
         node->segData.push_back(temp);
@@ -209,11 +209,11 @@ void EventTree::insertInitTreeHelper(NodePtr ue, Segment temp, bool UE)
         node->right = endNull;
         node->color = 1;
 
-        Node *node1 = new Node();
+        Event *node1 = new Event();
         node->parent = nullptr;
 
-        NodePtr temp = nullptr;
-        NodePtr curr = this->root;
+        EventPtr temp = nullptr;
+        EventPtr curr = this->root;
 
         while (curr != endNull)
         {
@@ -262,8 +262,8 @@ void EventTree::insertInitTreeHelper(NodePtr ue, Segment temp, bool UE)
 void EventTree::insertTree(Segment temp)
 {
 
-    NodePtr ue = this->searchTree(temp.UE);
-    NodePtr le = this->searchTree(temp.LE);
+    EventPtr ue = this->searchTree(temp.UE);
+    EventPtr le = this->searchTree(temp.LE);
 
     /// Handling Upper Endpoint
     insertInitTreeHelper(ue, temp, true);
@@ -273,7 +273,7 @@ void EventTree::insertTree(Segment temp)
 }
 
 /// Search Function Helper
-NodePtr EventTree::searchHelper(NodePtr root, Point key)
+EventPtr EventTree::searchHelper(EventPtr root, Point key)
 {
     if (root == endNull || key.isEqual(root->data))
     {
@@ -288,13 +288,13 @@ NodePtr EventTree::searchHelper(NodePtr root, Point key)
 }
 
 /// Search Function
-NodePtr EventTree::searchTree(Point temp)
+EventPtr EventTree::searchTree(Point temp)
 {
     return this->searchHelper(this->root, temp);
 }
 
 /// Get the minimum node.
-NodePtr EventTree::getMinNode(NodePtr node)
+EventPtr EventTree::getMinNode(EventPtr node)
 {
     while (node->left != endNull)
     {
@@ -304,7 +304,7 @@ NodePtr EventTree::getMinNode(NodePtr node)
 }
 
 /// Get the maximum node.
-NodePtr EventTree::getMaxNode(NodePtr node)
+EventPtr EventTree::getMaxNode(EventPtr node)
 {
     while (node->right != endNull)
     {
@@ -314,7 +314,7 @@ NodePtr EventTree::getMaxNode(NodePtr node)
 }
 
 /// Transplant the tree - delete function helper
-void EventTree::transplant(NodePtr l, NodePtr r)
+void EventTree::transplant(EventPtr l, EventPtr r)
 {
     if (l->parent == nullptr)
     {
@@ -332,9 +332,9 @@ void EventTree::transplant(NodePtr l, NodePtr r)
 }
 
 /// Delete Function
-void EventTree::deleteHelper(NodePtr root, Point key)
+void EventTree::deleteHelper(EventPtr root, Point key)
 {
-    NodePtr temp = this->searchTree(key);
+    EventPtr temp = this->searchTree(key);
 
     if (temp == endNull)
     {
@@ -342,8 +342,8 @@ void EventTree::deleteHelper(NodePtr root, Point key)
         return;
     }
 
-    NodePtr temp1 = temp;
-    NodePtr temp2;
+    EventPtr temp1 = temp;
+    EventPtr temp2;
     int color = temp->color;
     if (temp->left == endNull)
     {
@@ -385,9 +385,9 @@ void EventTree::deleteHelper(NodePtr root, Point key)
 }
 
 /// Delete Fix Function
-void EventTree::deleteFix(NodePtr node)
+void EventTree::deleteFix(EventPtr node)
 {
-    NodePtr temp;
+    EventPtr temp;
     while (node != root && node->color == 0)
     {
         if (node == node->parent->left)
