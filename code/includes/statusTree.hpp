@@ -7,6 +7,8 @@ using namespace std;
  * Class containing status queue implementation using red-black balanced binary search trees. * 
  * 
  */
+
+/// Description of struct Status
 struct Status
 {
     Segment data;
@@ -18,6 +20,8 @@ struct Status
 };
 
 typedef Status *StatusPtr;
+
+/// Description of class Status Tree
 
 class StatusTree
 {
@@ -58,17 +62,26 @@ public:
     /// Constructor
     StatusTree();
 
-    /// Print Functions - VIsualization
+    /// Print Functions - Visualization
+
     void printSNode(StatusPtr node);
+    /// Print Functions - Visualization
     void preOrder();
+    /// Print Functions - Visualization
     void postOrder();
+    /// Print Functions - Visualization
     void inOrder();
+    /// Print Functions - Visualization
     
-    /// Tree Utils
+    /// Tree Utils - 
     StatusPtr getMinSNode(StatusPtr node);
+    /// Tree Utils - 
     StatusPtr getMaxSNode(StatusPtr node);
+    /// Tree Utils - 
     StatusPtr getSuccSNode(StatusPtr node);
+    /// Tree Utils - 
     StatusPtr getPredSNode(StatusPtr node);
+    /// Tree Utils - 
     StatusPtr getRoot();
 
     /// Search

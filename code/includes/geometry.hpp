@@ -1,5 +1,6 @@
 using namespace std;
 
+/// Description of Point class
 class Point
 {
     int x;
@@ -17,6 +18,8 @@ public:
     int getY();
     void printPoint();
 };
+
+/// Description of Segment Class
 
 class Segment
 {
