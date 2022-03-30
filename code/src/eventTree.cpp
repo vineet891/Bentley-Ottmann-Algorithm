@@ -25,7 +25,18 @@ void EventTree::printNode(EventPtr node)
 {
     cout << "\nNode - ";
     node->data.printPoint();
-    for (auto seg : node->segData)
+    cout << "Upper Segments -\n";
+    for (auto seg : node->upperSeg)
+    {
+        seg.printSegment();
+    }
+    cout << "Lower Segments -\n";
+    for (auto seg : node->lowerSeg)
+    {
+        seg.printSegment();
+    }
+    cout << "Interior Segments -\n";
+    for (auto seg : node->cSeg)
     {
         seg.printSegment();
     }
@@ -81,6 +92,11 @@ void EventTree::inOrder()
 }
 
 /// Tree Utils - Tree Operations
+bool EventTree::isEmpty() 
+{
+    return root==endNull;
+}
+
 void EventTree::rightRotate(EventPtr node)
 {
     EventPtr temp = node->left;
@@ -204,7 +220,11 @@ void EventTree::insertInitTreeHelper(EventPtr ue, Segment temp, bool UE)
         Event *node = new Event();
         node->parent = nullptr;
         node->data = p;
-        node->segData.push_back(temp);
+        if(UE) {
+            node->upperSeg.push_back(temp);
+        } else {
+            node->lowerSeg.push_back(temp);
+        }
         node->left = endNull;
         node->right = endNull;
         node->color = 1;
@@ -254,7 +274,11 @@ void EventTree::insertInitTreeHelper(EventPtr ue, Segment temp, bool UE)
     else
     {
         // cout << "Point found. Updating node by adding segment...\n";
-        ue->segData.push_back(temp);
+        if(UE) {
+            ue->upperSeg.push_back(temp);
+        } else {
+            ue->lowerSeg.push_back(temp);
+        }
     }
 }
 
@@ -291,6 +315,11 @@ EventPtr EventTree::searchHelper(EventPtr root, Point key)
 EventPtr EventTree::searchTree(Point temp)
 {
     return this->searchHelper(this->root, temp);
+}
+
+/// Root accessor
+EventPtr EventTree::getRoot() {
+    return root;
 }
 
 /// Get the minimum node.

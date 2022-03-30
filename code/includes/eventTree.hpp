@@ -12,7 +12,9 @@ using namespace std;
  */
 struct Event
 {
-    vector<Segment> segData;
+    vector<Segment> upperSeg;
+    vector<Segment> lowerSeg;
+    vector<Segment> cSeg;
     Point data;
     Event *parent;
     Event *left;
@@ -64,6 +66,7 @@ public:
     EventPtr getSuccNode(EventPtr node);
     EventPtr getPredNode(EventPtr node);
     EventPtr getRoot();
+    bool isEmpty();
     /// Insert Function
     void insertTree(Segment p);
     /// Search Function

@@ -84,7 +84,7 @@ public:
     void swapSNode(StatusPtr n1, StatusPtr n2);
 
     /// Update Operations
-    void upperEndPoint(StatusPtr pu);   // Add/Insert segment to status and find the intersections with neighbors in the status queue. 
-    void intersectPoint(StatusPtr pi);  // Swap the positions of segments in the status queue and find intersections with the new neighbors.
-    void lowerEndPoint(StatusPtr pl);   // Delete the segment from status and find the intersection of neighbors of the segment we removed.
+    void upperEndPoint(StatusPtr s);   // Add/Insert segment to status and find the intersections with neighbors in the status queue. 
+    void intersectPoint(StatusPtr s1, StatusPtr s2);  // Swap the positions of segments in the status queue and find intersections with the new neighbors.
+    void lowerEndPoint(StatusPtr s);   // Delete the segment from status and find the intersection of neighbors of the segment we removed.
 };
