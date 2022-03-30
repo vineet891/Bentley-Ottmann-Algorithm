@@ -4,11 +4,6 @@
 #include "statusTree.hpp"
 using namespace std;
 
-struct IntersectPoints {
-    Point p;
-    vector<Segment> segments;
-};
-
 class SweepLine
 {
 private:
@@ -19,10 +14,18 @@ private:
     /// Initializing the event tree
     void initEventHelper(vector<Segment> segments);    
 
+    /// Util Functions
+    vector<Segment> findCSeg(Event e);
+    int getLeftMost(vector<Segment> u, vector<Segment> c);
+    int getRightMost(vector<Segment> u, vector<Segment> c);
+    int getNeigh(Segment s);
+
+
     /// Main Function
-    IntersectPoints findIntersectHelper();
+    Point findIntersectHelper();
 
 public:
+    Point e;
     /// Constructors
     SweepLine();
     SweepLine(vector<Segment> segments);
@@ -31,9 +34,12 @@ public:
     EventTree getEventTree();
 
     /// Bentley Ottmann main algorihtm function
-    vector<IntersectPoints> findIntersection();
+    vector<Point> findIntersection();
 
     /// Handling the different cases of event points
-    vector<IntersectPoints> handleEventPoint(Event e);
+    vector<Point> handleEventPoint(Event e);
+
+    /// Find New Events
+    void findNewEvents(Segment s1, Segment s2, Event p);
 
 };

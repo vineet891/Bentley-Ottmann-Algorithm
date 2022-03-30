@@ -43,6 +43,7 @@ private:
     /// Insert Helper
     void insertHelper(EventPtr node);
     void insertInitTreeHelper(EventPtr ue, Segment s, bool UE);
+    void insertPointHelper(Point p, vector<Segment> seg);
     /// Search Helper
     EventPtr searchHelper(EventPtr root, Point key);
     /// Delete Helpers
@@ -69,6 +70,7 @@ public:
     bool isEmpty();
     /// Insert Function
     void insertTree(Segment p);
+    void insertPoint(Point p, vector<Segment> seg);
     /// Search Function
     EventPtr searchTree(Point key);
     /// Delete Function

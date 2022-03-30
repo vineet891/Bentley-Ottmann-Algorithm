@@ -296,6 +296,68 @@ void EventTree::insertTree(Segment temp)
     insertInitTreeHelper(le, temp, false);
 }
 
+void EventTree::insertPoint(Point p, vector<Segment> seg) {
+    EventPtr ptr = this->searchTree(p);
+    if(ptr==endNull) {
+        insertPointHelper(p, seg);
+    } else {
+        ptr->cSeg = seg;
+    }
+}
+
+void EventTree::insertPointHelper(Point p, vector<Segment> seg) {
+     Event *node = new Event();
+    node->parent = nullptr;
+    node->data = p;
+    node->cSeg = seg;
+    node->left = endNull;
+    node->right = endNull;
+    node->color = 1;
+
+    Event *node1 = new Event();
+    node->parent = nullptr;
+
+    EventPtr temp = nullptr;
+    EventPtr curr = this->root;
+
+    while (curr != endNull)
+    {
+        temp = curr;
+        if (node->data.cmp(curr->data))
+        {
+            curr = curr->left;
+        }
+        else
+        {
+            curr = curr->right;
+        }
+    }
+
+    node->parent = temp;
+    if (temp == nullptr)
+    {
+        root = node;
+        node->color = 0;
+        return;
+    }
+    else if (node->data.cmp(temp->data))
+    {
+        temp->left = node;
+    }
+    else
+    {
+        temp->right = node;
+    }
+
+    if (node->parent->parent == nullptr)
+    {
+        return;
+    }
+
+    insertHelper(node);
+
+}
+
 /// Search Function Helper
 EventPtr EventTree::searchHelper(EventPtr root, Point key)
 {
