@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['intersectpoints_0',['IntersectPoints',['../struct_intersect_points.html',1,'']]]
+  ['point_0',['Point',['../class_point.html',1,'']]]
 ];

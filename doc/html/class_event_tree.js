@@ -8,6 +8,7 @@ var class_event_tree =
     [ "getRoot", "class_event_tree.html#a955ad3f22d591ac06c0fcf75ebb1399b", null ],
     [ "getSuccNode", "class_event_tree.html#a8e463012c7bc5fd63c3445dd3b00851a", null ],
     [ "inOrder", "class_event_tree.html#a21b98458d63fbf767bf719f363b57a51", null ],
+    [ "insertPoint", "class_event_tree.html#aeccc59eb4cb64deb0e1580335db22d1f", null ],
     [ "insertTree", "class_event_tree.html#a501542615e009410c85a69134e24d54a", null ],
     [ "isEmpty", "class_event_tree.html#ad504f3103933d2037e1c9d7420391a88", null ],
     [ "postOrder", "class_event_tree.html#a4d05bd8b56388b7f66d99d08119144ea", null ],

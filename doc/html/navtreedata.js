@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "My Project", "index.html", [
+  [ "DAA Assignment", "index.html", [
     [ "Implementation of Algorithm for Reporting and Counting Geometric Intersections", "md__r_e_a_d_m_e.html", [
       [ "Phase-1", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
       [ "Reference", "md__r_e_a_d_m_e.html#autotoc_md2", null ],

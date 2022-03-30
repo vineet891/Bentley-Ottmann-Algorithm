@@ -8,7 +8,6 @@ var files_dup =
     ] ],
     [ "statusTree.hpp", "status_tree_8hpp.html", "status_tree_8hpp" ],
     [ "sweepLine.hpp", "sweep_line_8hpp.html", [
-      [ "IntersectPoints", "struct_intersect_points.html", "struct_intersect_points" ],
       [ "SweepLine", "class_sweep_line.html", "class_sweep_line" ]
     ] ]
 ];

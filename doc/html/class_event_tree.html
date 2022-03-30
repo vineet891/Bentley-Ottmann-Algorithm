@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: EventTree Class Reference</title>
+<title>DAA Assignment: EventTree Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">DAA Assignment
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -139,13 +139,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad504f3103933d2037e1c9d7420391a88"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_tree.html#ad504f3103933d2037e1c9d7420391a88">isEmpty</a> ()</td></tr>
 <tr class="separator:ad504f3103933d2037e1c9d7420391a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a501542615e009410c85a69134e24d54a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_tree.html#a501542615e009410c85a69134e24d54a">insertTree</a> (<a class="el" href="class_segment.html">Segment</a> p)</td></tr>
-<tr class="memdesc:a501542615e009410c85a69134e24d54a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert Function.  <a href="class_event_tree.html#a501542615e009410c85a69134e24d54a">More...</a><br /></td></tr>
+<tr class="memdesc:a501542615e009410c85a69134e24d54a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert Function - Insert into tree.  <a href="class_event_tree.html#a501542615e009410c85a69134e24d54a">More...</a><br /></td></tr>
 <tr class="separator:a501542615e009410c85a69134e24d54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeccc59eb4cb64deb0e1580335db22d1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_tree.html#aeccc59eb4cb64deb0e1580335db22d1f">insertPoint</a> (<a class="el" href="class_point.html">Point</a> p, vector&lt; <a class="el" href="class_segment.html">Segment</a> &gt; seg)</td></tr>
+<tr class="memdesc:aeccc59eb4cb64deb0e1580335db22d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search Function used to search for a node in the tree.  <a href="class_event_tree.html#aeccc59eb4cb64deb0e1580335db22d1f">More...</a><br /></td></tr>
+<tr class="separator:aeccc59eb4cb64deb0e1580335db22d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a859cf4a98d670c435598e3eb98f181f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_tree_8hpp.html#a867f7bbf1403b77a908ccdda0ac25920">EventPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_tree.html#a859cf4a98d670c435598e3eb98f181f7">searchTree</a> (<a class="el" href="class_point.html">Point</a> key)</td></tr>
 <tr class="memdesc:a859cf4a98d670c435598e3eb98f181f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search Function.  <a href="class_event_tree.html#a859cf4a98d670c435598e3eb98f181f7">More...</a><br /></td></tr>
 <tr class="separator:a859cf4a98d670c435598e3eb98f181f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a094020a41908f9f588d781184b5d0060"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_tree.html#a094020a41908f9f588d781184b5d0060">deleteNode</a> (<a class="el" href="class_point.html">Point</a> data)</td></tr>
-<tr class="memdesc:a094020a41908f9f588d781184b5d0060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete Function.  <a href="class_event_tree.html#a094020a41908f9f588d781184b5d0060">More...</a><br /></td></tr>
+<tr class="memdesc:a094020a41908f9f588d781184b5d0060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete Function used to delete node from the tree.  <a href="class_event_tree.html#a094020a41908f9f588d781184b5d0060">More...</a><br /></td></tr>
 <tr class="separator:a094020a41908f9f588d781184b5d0060"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -192,7 +195,13 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Delete Function. </p>
+<p>Delete Function used to delete node from the tree. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Node to be deleted. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -345,6 +354,42 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aeccc59eb4cb64deb0e1580335db22d1f" name="aeccc59eb4cb64deb0e1580335db22d1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeccc59eb4cb64deb0e1580335db22d1f">&#9670;&nbsp;</a></span>insertPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventTree::insertPoint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_point.html">Point</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_segment.html">Segment</a> &gt;&#160;</td>
+          <td class="paramname"><em>seg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Search Function used to search for a node in the tree. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The point to search for. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a501542615e009410c85a69134e24d54a" name="a501542615e009410c85a69134e24d54a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a501542615e009410c85a69134e24d54a">&#9670;&nbsp;</a></span>insertTree()</h2>
 
@@ -361,7 +406,13 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Insert Function. </p>
+<p>Insert Function - Insert into tree. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Takes segment p as input and inserts it into the tree. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

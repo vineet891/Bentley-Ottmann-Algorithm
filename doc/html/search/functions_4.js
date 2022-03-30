@@ -10,6 +10,7 @@ var searchData=
   ['getroot_7',['getRoot',['../class_event_tree.html#a955ad3f22d591ac06c0fcf75ebb1399b',1,'EventTree::getRoot()'],['../class_status_tree.html#aef7c9158f3d9bde4cef68d890c40e83d',1,'StatusTree::getRoot()']]],
   ['getsuccnode_8',['getSuccNode',['../class_event_tree.html#a8e463012c7bc5fd63c3445dd3b00851a',1,'EventTree']]],
   ['getsuccsnode_9',['getSuccSNode',['../class_status_tree.html#a46b9aa2e45c9ff0734d61980835164a8',1,'StatusTree']]],
-  ['getx_10',['getX',['../class_point.html#a0b82a4aa9614c11854abc507d89a70a9',1,'Point']]],
-  ['gety_11',['getY',['../class_point.html#a3770f321c49dfe7ca463900fddc2e2bc',1,'Point']]]
+  ['getval_10',['getVal',['../class_segment.html#a1d9f8414fea7ac18b257157b55a93169',1,'Segment']]],
+  ['getx_11',['getX',['../class_point.html#a0b82a4aa9614c11854abc507d89a70a9',1,'Point']]],
+  ['gety_12',['getY',['../class_point.html#a3770f321c49dfe7ca463900fddc2e2bc',1,'Point']]]
 ];
