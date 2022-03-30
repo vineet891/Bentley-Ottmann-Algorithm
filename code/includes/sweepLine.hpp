@@ -27,7 +27,7 @@ private:
     Point findIntersectHelper();
 
 public:
-    Point e;
+    EventPtr pt;
     /// Constructors
     SweepLine();
     SweepLine(vector<Segment> segments);

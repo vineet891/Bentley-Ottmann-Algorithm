@@ -37,7 +37,6 @@ vector<Point> SweepLine::findIntersection()
         vector<Point> temp = handleEventPoint(node);
         res.insert(res.end(), temp.begin(), temp.end());
     }
-
     return res;
 }
 
@@ -45,7 +44,6 @@ vector<Point> SweepLine::findIntersection()
 vector<Point> SweepLine::handleEventPoint(EventPtr e)
 {
     bool flag = true;
-    this->e = e->data;
     vector<Point> res;
     vector<Segment> cSegTemp;
     if (status.empty())
@@ -58,7 +56,6 @@ vector<Point> SweepLine::handleEventPoint(EventPtr e)
     }
 
     int n = cSegTemp.size() + e->lowerSeg.size() + e->upperSeg.size();
-
     /// If Lp Cp Up union has more than one element
     if (n > 0)
     {
@@ -110,7 +107,6 @@ vector<Point> SweepLine::handleEventPoint(EventPtr e)
     }
 
     /// Sort the status queue
-
     auto comp = [&e](Segment s1, Segment s2) ->bool {
         Point p1 = s1.intersection(Segment(Point(0, e->data.getY()), e->data));
         Point p2 = s2.intersection(Segment(Point(0, e->data.getY()), e->data));

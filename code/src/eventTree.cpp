@@ -92,9 +92,9 @@ void EventTree::inOrder()
 }
 
 /// Tree Utils - Tree Operations
-bool EventTree::isEmpty() 
+bool EventTree::isEmpty()
 {
-    return root==endNull;
+    return root == endNull;
 }
 
 void EventTree::rightRotate(EventPtr node)
@@ -216,13 +216,15 @@ void EventTree::insertInitTreeHelper(EventPtr ue, Segment temp, bool UE)
     Point p = UE ? temp.UE : temp.LE;
     if (ue == endNull)
     {
-        // cout << "No point found. Adding point to tree...\n";
         Event *node = new Event();
         node->parent = nullptr;
         node->data = p;
-        if(UE) {
+        if (UE)
+        {
             node->upperSeg.push_back(temp);
-        } else {
+        }
+        else
+        {
             node->lowerSeg.push_back(temp);
         }
         node->left = endNull;
@@ -273,10 +275,12 @@ void EventTree::insertInitTreeHelper(EventPtr ue, Segment temp, bool UE)
     }
     else
     {
-        // cout << "Point found. Updating node by adding segment...\n";
-        if(UE) {
+        if (UE)
+        {
             ue->upperSeg.push_back(temp);
-        } else {
+        }
+        else
+        {
             ue->lowerSeg.push_back(temp);
         }
     }
@@ -296,17 +300,22 @@ void EventTree::insertTree(Segment temp)
     insertInitTreeHelper(le, temp, false);
 }
 
-void EventTree::insertPoint(Point p, vector<Segment> seg) {
+void EventTree::insertPoint(Point p, vector<Segment> seg)
+{
     EventPtr ptr = this->searchTree(p);
-    if(ptr==endNull) {
+    if (ptr == endNull)
+    {
         insertPointHelper(p, seg);
-    } else {
+    }
+    else
+    {
         ptr->cSeg = seg;
     }
 }
 
-void EventTree::insertPointHelper(Point p, vector<Segment> seg) {
-     Event *node = new Event();
+void EventTree::insertPointHelper(Point p, vector<Segment> seg)
+{
+    Event *node = new Event();
     node->parent = nullptr;
     node->data = p;
     node->cSeg = seg;
@@ -355,7 +364,6 @@ void EventTree::insertPointHelper(Point p, vector<Segment> seg) {
     }
 
     insertHelper(node);
-
 }
 
 /// Search Function Helper
@@ -380,18 +388,20 @@ EventPtr EventTree::searchTree(Point temp)
 }
 
 /// Root accessor
-EventPtr EventTree::getRoot() {
+EventPtr EventTree::getRoot()
+{
     return root;
 }
 
 /// Get the minimum node.
 EventPtr EventTree::getMinNode(EventPtr node)
 {
-    while (node->left != endNull)
+    EventPtr temp = node;
+    while (temp->left != endNull)
     {
-        node = node->left;
+        temp = temp->left;      
     }
-    return node;
+    return temp;
 }
 
 /// Get the maximum node.
