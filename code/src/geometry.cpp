@@ -23,8 +23,8 @@ void Point::printPoint()
     cout << "Point : (" << this->getX() << "," << this->getY() << ")\n";
 }
 
-int Point::xHelp() { return this->getX(); }
-int Point::yHelp() { return this->getY(); }
+int Point::xHelp() { return this->x; }
+int Point::yHelp() { return this->y; }
 int Point::getX() { return this->xHelp(); };
 int Point::getY() { return this->yHelp(); };
 

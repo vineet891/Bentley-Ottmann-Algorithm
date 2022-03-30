@@ -34,19 +34,18 @@ vector<Point> SweepLine::findIntersection()
     {
         EventPtr node = events.getMinNode(events.getRoot());
         events.deleteNode(node->data);
+        vector<Point> temp = handleEventPoint(node);
+        res.insert(res.end(), temp.begin(), temp.end());
     }
 
     return res;
 }
 
 /// Handling the different cases of event points
-bool comp(Segment s1, Segment s2) {
-    return s1.cmp(s2);
-}
-vector<Point> SweepLine::handleEventPoint(Event e)
+vector<Point> SweepLine::handleEventPoint(EventPtr e)
 {
     bool flag = true;
-    this->e = e.data;
+    this->e = e->data;
     vector<Point> res;
     vector<Segment> cSegTemp;
     if (status.empty())
@@ -58,16 +57,16 @@ vector<Point> SweepLine::handleEventPoint(Event e)
         cSegTemp = findCSeg(e);
     }
 
-    int n = cSegTemp.size() + e.lowerSeg.size() + e.upperSeg.size();
+    int n = cSegTemp.size() + e->lowerSeg.size() + e->upperSeg.size();
 
     /// If Lp Cp Up union has more than one element
     if (n > 0)
     {
-        res.push_back(e.data);
+        res.push_back(e->data);
     }
 
     /// Delete from status queue (Lp union Cp)
-    for (auto seg : e.lowerSeg)
+    for (auto seg : e->lowerSeg)
     {
         auto i = find_if(status.begin(), status.end(), [seg](Segment s) {
             return s.cmp(seg);
@@ -89,7 +88,7 @@ vector<Point> SweepLine::handleEventPoint(Event e)
     }
 
     /// Add to status queue (Up union Cp)
-    for (auto seg : e.upperSeg)
+    for (auto seg : e->upperSeg)
     {
         auto i =  find_if(status.begin(), status.end(), [seg](Segment s) {
             return s.cmp(seg);
@@ -113,16 +112,16 @@ vector<Point> SweepLine::handleEventPoint(Event e)
     /// Sort the status queue
 
     auto comp = [&e](Segment s1, Segment s2) ->bool {
-        Point p1 = s1.intersection(Segment(Point(0, e.data.getY()), e.data));
-        Point p2 = s2.intersection(Segment(Point(0, e.data.getY()), e.data));
+        Point p1 = s1.intersection(Segment(Point(0, e->data.getY()), e->data));
+        Point p2 = s2.intersection(Segment(Point(0, e->data.getY()), e->data));
         return p1.getX() < p2.getX();
     };
     sort(status.begin(), status.end(), comp);
 
     /// Find new event points
-    Segment s1 = status[getLeftMost(e.upperSeg, cSegTemp)];
-    Segment s2 = status[getRightMost(e.upperSeg, cSegTemp)];
-    if (cSegTemp.size() + e.upperSeg.size() == 0)
+    Segment s1 = status[getLeftMost(e->upperSeg, cSegTemp)];
+    Segment s2 = status[getRightMost(e->upperSeg, cSegTemp)];
+    if (cSegTemp.size() + e->upperSeg.size() == 0)
     {
         findNewEvents(s1, s2, e);
     }
@@ -137,10 +136,10 @@ vector<Point> SweepLine::handleEventPoint(Event e)
 }
 
 /// Find New Events
-void SweepLine::findNewEvents(Segment s1, Segment s2, Event p)
+void SweepLine::findNewEvents(Segment s1, Segment s2, EventPtr p)
 {
     Point inter = s1.intersection(s2);
-    if (inter.getX() > p.data.getX() || inter.getY() < p.data.getY() || (inter.getX() == p.data.getX() && inter.getY() == p.data.getY()))
+    if (inter.getX() > p->data.getX() || inter.getY() < p->data.getY() || (inter.getX() == p->data.getX() && inter.getY() == p->data.getY()))
     {
         Event *e = new Event();
         vector<Segment> seg;
@@ -151,12 +150,12 @@ void SweepLine::findNewEvents(Segment s1, Segment s2, Event p)
 }
 
 /// Util Functions
-vector<Segment> SweepLine::findCSeg(Event e)
+vector<Segment> SweepLine::findCSeg(EventPtr e)
 {
     vector<Segment> temp;
     for (auto seg : status)
     {
-        if (seg.isPresent(e.data))
+        if (seg.isPresent(e->data))
         {
             temp.push_back(seg);
         }

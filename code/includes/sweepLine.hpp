@@ -15,7 +15,7 @@ private:
     void initEventHelper(vector<Segment> segments);    
 
     /// Util Functions
-    vector<Segment> findCSeg(Event e);
+    vector<Segment> findCSeg(EventPtr e);
     int getLeftMost(vector<Segment> u, vector<Segment> c);
     int getRightMost(vector<Segment> u, vector<Segment> c);
     int getNeigh(Segment s);
@@ -37,9 +37,9 @@ public:
     vector<Point> findIntersection();
 
     /// Handling the different cases of event points
-    vector<Point> handleEventPoint(Event e);
+    vector<Point> handleEventPoint(EventPtr e);
 
     /// Find New Events
-    void findNewEvents(Segment s1, Segment s2, Event p);
+    void findNewEvents(Segment s1, Segment s2, EventPtr p);
 
 };
