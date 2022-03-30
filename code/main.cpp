@@ -74,7 +74,10 @@ int main(int argc, char *argv[])
     
     /// Sweep Line
     SweepLine sweep = SweepLine(segments);
-    vector<IntersectPoints> res = sweep.findIntersection();
+    vector<Point> res = sweep.findIntersection();
+
+    cout << "Final Intersection points :\n";
+    for(auto p:res) { p.printPoint(); }
 
     /// Verbose Statments
     if (!string(argv[2]).compare("-v"))

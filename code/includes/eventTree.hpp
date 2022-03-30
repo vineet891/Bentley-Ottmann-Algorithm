@@ -46,6 +46,7 @@ private:
     /// Insert Helper
     void insertHelper(EventPtr node);
     void insertInitTreeHelper(EventPtr ue, Segment s, bool UE);
+    void insertPointHelper(Point p, vector<Segment> seg);
     /// Search Helper
     EventPtr searchHelper(EventPtr root, Point key);
     /// Delete Helpers
@@ -102,6 +103,8 @@ public:
     void insertTree(Segment p);
     /// Search Function used to search for a node in the tree
     /// @param key The point to search for.
+    void insertPoint(Point p, vector<Segment> seg);
+    /// Search Function
     EventPtr searchTree(Point key);
     /// Delete Function used to delete node from the tree
     /// @param data Node to be deleted.
