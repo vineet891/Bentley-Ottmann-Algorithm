@@ -72,6 +72,7 @@ Point Segment::intersection(Segment s)
            b = p1.getY() - a * p1.getX(),
            c = (p4.getY() - p3.getY()) / (p4.getX() - p3.getX()),
            d = p3.getY() - c * p3.getX();
+    cout << (p2.getY() - p1.getY()) / (p2.getX() - p1.getX()) << " " << p1.getY() << " " << p3.getX() << " " << p1.getX() << endl;
     return Point(-(b - d) / (a - c), a * (-(b - d) / (a - c)) + b);
 }
 

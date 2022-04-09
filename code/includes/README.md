@@ -1,6 +1,8 @@
-# Implementation of Algorithm for Reporting and Counting Geometric Intersections
+# Implementation of Algorithm
 
 Partial Fulfillment of CS F364 Design and Analysis of Algorithms
+
+Algorithm for Reporting and Counting Geometric Intersections.
 
 ## Phase-1
 

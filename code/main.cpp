@@ -10,17 +10,17 @@ int main(int argc, char *argv[])
     vector<Segment> segments;
 
     /// Checking verbose argument option
-    if (string(argv[2]).compare("-v"))
-    {
-        v = 2;
-    }
-    else
+    if (argc>2 && !string(argv[2]).compare("-v"))
     {
         v = 3;
     }
+    else
+    {
+        v = 2;
+    }
 
     /// Reading input:
-    if (!string(argv[1]).compare("-f"))
+    if (argc>1 && !string(argv[1]).compare("-f"))
     {
         /// Reading input from test case files
         cout << "Reading input from test case file " << argv[v] << "...." << endl;
@@ -73,17 +73,26 @@ int main(int argc, char *argv[])
     }
     
     /// Sweep Line
-    SweepLine sweep = SweepLine(segments);
-    vector<Point> res = sweep.findIntersection();
+    for(auto seg1 : segments) {
+        for(auto seg2 : segments) {
+            if(!seg1.isEqual(seg2)) {                
+                Point p = seg1.intersection(seg2);
+                p.printPoint();
+            }
+        }
+    }
 
-    cout << "Final Intersection points :\n";
-    for(auto p:res) { p.printPoint(); }
+    // SweepLine sweep = SweepLine(segments);
+    // vector<Point> res = sweep.findIntersection();
+
+    // cout << "Final Intersection points :\n";
+    // for(auto p:res) { p.printPoint(); }
 
     /// Verbose Statments
     if (!string(argv[2]).compare("-v"))
     {
         cout << "\nEvent Tree -\n";
-        sweep.getEventTree().inOrder();
+        // sweep.getEventTree().inOrder();
     }    
 
     return 0;
