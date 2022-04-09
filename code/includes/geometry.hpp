@@ -3,19 +3,19 @@ using namespace std;
 /// Description of Point class
 class Point
 {
-    int x;
-    int y;
+    double x;
+    double y;
 
-    int xHelp();
-    int yHelp();
+    double xHelp();
+    double yHelp();
 
 public:
-    Point(int x, int y);
+    Point(double x, double y);
     Point() = default;
     bool cmp(Point p2);
     bool isEqual(Point p);
-    int getX();
-    int getY();
+    double getX();
+    double getY();
     void printPoint();
 };
 
@@ -38,6 +38,7 @@ public:
     double slopeCal(Point U, Point L);
     double getVal(Point p);
     bool isPresent(Point p);
+    bool does_intersect(Segment l2);
     Point intersection(Segment s);
 
 };
