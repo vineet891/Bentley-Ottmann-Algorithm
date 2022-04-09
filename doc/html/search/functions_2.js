@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['eventtree_0',['EventTree',['../class_event_tree.html#ab434268c1f094f4499450869ab6271f9',1,'EventTree']]]
+  ['findintersection_0',['findIntersection',['../class_sweep_line.html#a74d434309c15a982c356325281dfcba9',1,'SweepLine']]],
+  ['findnewevents_1',['findNewEvents',['../class_sweep_line.html#a05a8d185e9a8132369f800556847081a',1,'SweepLine']]]
 ];

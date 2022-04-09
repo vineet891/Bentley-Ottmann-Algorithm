@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['black_0',['Black',['../constant_8hpp.html#a670c5088793cba0d1bb374aac9838a3eae90dfb84e30edf611e326eeb04d680de',1,'constant.hpp']]]
+  ['bentley_2dottmann_20algorithm_20_2d_20line_20intersections_0',['Bentley-Ottmann Algorithm - Line Intersections',['../md_code_includes__r_e_a_d_m_e.html',1,'']]]
 ];

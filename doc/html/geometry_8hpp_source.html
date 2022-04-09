@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>DAA Assignment: geometry.hpp Source File</title>
+<title>DAA Assignment: code/includes/geometry.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,6 +29,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td id="projectalign">
    <div id="projectname">DAA Assignment
    </div>
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('geometry_8hpp_source.html',''); initRe
   <div class="headertitle"><div class="title">geometry.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="geometry_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using namespace </span>std;</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using namespace </span>std;</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="class_point.html">    4</a></span><span class="keyword">class </span><a class="code hl_class" href="class_point.html">Point</a></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
@@ -105,13 +106,13 @@ $(document).ready(function(){initNavTree('geometry_8hpp_source.html',''); initRe
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">int</span> yHelp();</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_point.html#a001c4958c310b248f5c26037aea38a9c">   13</a></span>    <a class="code hl_function" href="class_point.html#a001c4958c310b248f5c26037aea38a9c">Point</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_point.html#a257415ad611a16bb73628efcdb87d0fd">   14</a></span>    <a class="code hl_function" href="class_point.html#a257415ad611a16bb73628efcdb87d0fd">Point</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_point.html#a6d41671c0052b078c3fd190429b021b8">   15</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_point.html#a6d41671c0052b078c3fd190429b021b8">cmp</a>(<a class="code hl_class" href="class_point.html">Point</a> p2);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_point.html#a32a147d58cd6a3bd1980b631b6b2aec2">   16</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_point.html#a32a147d58cd6a3bd1980b631b6b2aec2">isEqual</a>(<a class="code hl_class" href="class_point.html">Point</a> p);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_point.html#a0b82a4aa9614c11854abc507d89a70a9">   17</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_point.html#a0b82a4aa9614c11854abc507d89a70a9">getX</a>();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_point.html#a3770f321c49dfe7ca463900fddc2e2bc">   18</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_point.html#a3770f321c49dfe7ca463900fddc2e2bc">getY</a>();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_point.html#ad32f6a515be1cf069bf5ea6b89178ae9">   19</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_point.html#ad32f6a515be1cf069bf5ea6b89178ae9">printPoint</a>();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="class_point.html">Point</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_class" href="class_point.html">Point</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">bool</span> cmp(<a class="code hl_class" href="class_point.html">Point</a> p2);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">bool</span> isEqual(<a class="code hl_class" href="class_point.html">Point</a> p);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> getX();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">int</span> getY();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> printPoint();</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
@@ -119,50 +120,30 @@ $(document).ready(function(){initNavTree('geometry_8hpp_source.html',''); initRe
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_segment.html#a310e92dc72ba2b7636f2f6df12ad8df4">   28</a></span>    <a class="code hl_class" href="class_point.html">Point</a> <a class="code hl_variable" href="class_segment.html#a310e92dc72ba2b7636f2f6df12ad8df4">UE</a>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_segment.html#a3299ffa9833a03f3296dd21716ee510d">   29</a></span>    <a class="code hl_class" href="class_point.html">Point</a> <a class="code hl_variable" href="class_segment.html#a3299ffa9833a03f3296dd21716ee510d">LE</a>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_segment.html#a6110252c2a2b2cd1ee44a3e63cef8eaa">   30</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_segment.html#a6110252c2a2b2cd1ee44a3e63cef8eaa">slope</a>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_segment.html#a406b29d9c99e9d794fb46d42b086b415">   31</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_segment.html#a406b29d9c99e9d794fb46d42b086b415">c</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="class_point.html">Point</a> UE;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_class" href="class_point.html">Point</a> LE;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">double</span> slope;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">double</span> c;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_segment.html#a8ae1da391b3784907da632c1b46e9db8">   33</a></span>    <a class="code hl_function" href="class_segment.html#a8ae1da391b3784907da632c1b46e9db8">Segment</a>(<a class="code hl_class" href="class_point.html">Point</a> U, <a class="code hl_class" href="class_point.html">Point</a> L);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_segment.html#a032fcd157f86cea4913cb54d4fe94412">   34</a></span>    <a class="code hl_function" href="class_segment.html#a032fcd157f86cea4913cb54d4fe94412">Segment</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_segment.html#a00c0ff91e782ffc29a31aed9d3cd6c0d">   35</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_segment.html#a00c0ff91e782ffc29a31aed9d3cd6c0d">cmp</a>(<a class="code hl_class" href="class_segment.html">Segment</a> p2);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_segment.html#a0233a9e68dad199eff8b10523ea969bb">   36</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_segment.html#a0233a9e68dad199eff8b10523ea969bb">isEqual</a>(<a class="code hl_class" href="class_segment.html">Segment</a> p);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_segment.html#a3d58d6bc70930f41fa0c312736fbbb2f">   37</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_segment.html#a3d58d6bc70930f41fa0c312736fbbb2f">printSegment</a>();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_segment.html#aedd82823d3ba41c27508bdf11ef019e5">   38</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_segment.html#aedd82823d3ba41c27508bdf11ef019e5">slopeCal</a>(<a class="code hl_class" href="class_point.html">Point</a> U, <a class="code hl_class" href="class_point.html">Point</a> L);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_segment.html#a1d9f8414fea7ac18b257157b55a93169">   39</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_segment.html#a1d9f8414fea7ac18b257157b55a93169">getVal</a>(<a class="code hl_class" href="class_point.html">Point</a> p);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_segment.html#a1c309f3a55a4acc7bc14bf4998d45aa5">   40</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_segment.html#a1c309f3a55a4acc7bc14bf4998d45aa5">isPresent</a>(<a class="code hl_class" href="class_point.html">Point</a> p);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_segment.html#a89eb1df783dfb82f417d740676480179">   41</a></span>    <a class="code hl_class" href="class_point.html">Point</a> <a class="code hl_function" href="class_segment.html#a89eb1df783dfb82f417d740676480179">intersection</a>(<a class="code hl_class" href="class_segment.html">Segment</a> s);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_class" href="class_segment.html">Segment</a>(<a class="code hl_class" href="class_point.html">Point</a> U, <a class="code hl_class" href="class_point.html">Point</a> L);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_class" href="class_segment.html">Segment</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">bool</span> cmp(<a class="code hl_class" href="class_segment.html">Segment</a> p2);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">bool</span> isEqual(<a class="code hl_class" href="class_segment.html">Segment</a> p);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> printSegment();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">double</span> slopeCal(<a class="code hl_class" href="class_point.html">Point</a> U, <a class="code hl_class" href="class_point.html">Point</a> L);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">double</span> getVal(<a class="code hl_class" href="class_point.html">Point</a> p);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">bool</span> isPresent(<a class="code hl_class" href="class_point.html">Point</a> p);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_class" href="class_point.html">Point</a> intersection(<a class="code hl_class" href="class_segment.html">Segment</a> s);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
 <div class="ttc" id="aclass_point_html"><div class="ttname"><a href="class_point.html">Point</a></div><div class="ttdoc">Description of Point class.</div><div class="ttdef"><b>Definition:</b> geometry.hpp:5</div></div>
-<div class="ttc" id="aclass_point_html_a001c4958c310b248f5c26037aea38a9c"><div class="ttname"><a href="class_point.html#a001c4958c310b248f5c26037aea38a9c">Point::Point</a></div><div class="ttdeci">Point(int x, int y)</div></div>
-<div class="ttc" id="aclass_point_html_a0b82a4aa9614c11854abc507d89a70a9"><div class="ttname"><a href="class_point.html#a0b82a4aa9614c11854abc507d89a70a9">Point::getX</a></div><div class="ttdeci">int getX()</div></div>
-<div class="ttc" id="aclass_point_html_a257415ad611a16bb73628efcdb87d0fd"><div class="ttname"><a href="class_point.html#a257415ad611a16bb73628efcdb87d0fd">Point::Point</a></div><div class="ttdeci">Point()=default</div></div>
-<div class="ttc" id="aclass_point_html_a32a147d58cd6a3bd1980b631b6b2aec2"><div class="ttname"><a href="class_point.html#a32a147d58cd6a3bd1980b631b6b2aec2">Point::isEqual</a></div><div class="ttdeci">bool isEqual(Point p)</div></div>
-<div class="ttc" id="aclass_point_html_a3770f321c49dfe7ca463900fddc2e2bc"><div class="ttname"><a href="class_point.html#a3770f321c49dfe7ca463900fddc2e2bc">Point::getY</a></div><div class="ttdeci">int getY()</div></div>
-<div class="ttc" id="aclass_point_html_a6d41671c0052b078c3fd190429b021b8"><div class="ttname"><a href="class_point.html#a6d41671c0052b078c3fd190429b021b8">Point::cmp</a></div><div class="ttdeci">bool cmp(Point p2)</div></div>
-<div class="ttc" id="aclass_point_html_ad32f6a515be1cf069bf5ea6b89178ae9"><div class="ttname"><a href="class_point.html#ad32f6a515be1cf069bf5ea6b89178ae9">Point::printPoint</a></div><div class="ttdeci">void printPoint()</div></div>
 <div class="ttc" id="aclass_segment_html"><div class="ttname"><a href="class_segment.html">Segment</a></div><div class="ttdoc">Description of Segment Class.</div><div class="ttdef"><b>Definition:</b> geometry.hpp:25</div></div>
-<div class="ttc" id="aclass_segment_html_a00c0ff91e782ffc29a31aed9d3cd6c0d"><div class="ttname"><a href="class_segment.html#a00c0ff91e782ffc29a31aed9d3cd6c0d">Segment::cmp</a></div><div class="ttdeci">bool cmp(Segment p2)</div></div>
-<div class="ttc" id="aclass_segment_html_a0233a9e68dad199eff8b10523ea969bb"><div class="ttname"><a href="class_segment.html#a0233a9e68dad199eff8b10523ea969bb">Segment::isEqual</a></div><div class="ttdeci">bool isEqual(Segment p)</div></div>
-<div class="ttc" id="aclass_segment_html_a032fcd157f86cea4913cb54d4fe94412"><div class="ttname"><a href="class_segment.html#a032fcd157f86cea4913cb54d4fe94412">Segment::Segment</a></div><div class="ttdeci">Segment()=default</div></div>
-<div class="ttc" id="aclass_segment_html_a1c309f3a55a4acc7bc14bf4998d45aa5"><div class="ttname"><a href="class_segment.html#a1c309f3a55a4acc7bc14bf4998d45aa5">Segment::isPresent</a></div><div class="ttdeci">bool isPresent(Point p)</div></div>
-<div class="ttc" id="aclass_segment_html_a1d9f8414fea7ac18b257157b55a93169"><div class="ttname"><a href="class_segment.html#a1d9f8414fea7ac18b257157b55a93169">Segment::getVal</a></div><div class="ttdeci">double getVal(Point p)</div></div>
-<div class="ttc" id="aclass_segment_html_a310e92dc72ba2b7636f2f6df12ad8df4"><div class="ttname"><a href="class_segment.html#a310e92dc72ba2b7636f2f6df12ad8df4">Segment::UE</a></div><div class="ttdeci">Point UE</div><div class="ttdef"><b>Definition:</b> geometry.hpp:28</div></div>
-<div class="ttc" id="aclass_segment_html_a3299ffa9833a03f3296dd21716ee510d"><div class="ttname"><a href="class_segment.html#a3299ffa9833a03f3296dd21716ee510d">Segment::LE</a></div><div class="ttdeci">Point LE</div><div class="ttdef"><b>Definition:</b> geometry.hpp:29</div></div>
-<div class="ttc" id="aclass_segment_html_a3d58d6bc70930f41fa0c312736fbbb2f"><div class="ttname"><a href="class_segment.html#a3d58d6bc70930f41fa0c312736fbbb2f">Segment::printSegment</a></div><div class="ttdeci">void printSegment()</div></div>
-<div class="ttc" id="aclass_segment_html_a406b29d9c99e9d794fb46d42b086b415"><div class="ttname"><a href="class_segment.html#a406b29d9c99e9d794fb46d42b086b415">Segment::c</a></div><div class="ttdeci">double c</div><div class="ttdef"><b>Definition:</b> geometry.hpp:31</div></div>
-<div class="ttc" id="aclass_segment_html_a6110252c2a2b2cd1ee44a3e63cef8eaa"><div class="ttname"><a href="class_segment.html#a6110252c2a2b2cd1ee44a3e63cef8eaa">Segment::slope</a></div><div class="ttdeci">double slope</div><div class="ttdef"><b>Definition:</b> geometry.hpp:30</div></div>
-<div class="ttc" id="aclass_segment_html_a89eb1df783dfb82f417d740676480179"><div class="ttname"><a href="class_segment.html#a89eb1df783dfb82f417d740676480179">Segment::intersection</a></div><div class="ttdeci">Point intersection(Segment s)</div></div>
-<div class="ttc" id="aclass_segment_html_a8ae1da391b3784907da632c1b46e9db8"><div class="ttname"><a href="class_segment.html#a8ae1da391b3784907da632c1b46e9db8">Segment::Segment</a></div><div class="ttdeci">Segment(Point U, Point L)</div></div>
-<div class="ttc" id="aclass_segment_html_aedd82823d3ba41c27508bdf11ef019e5"><div class="ttname"><a href="class_segment.html#aedd82823d3ba41c27508bdf11ef019e5">Segment::slopeCal</a></div><div class="ttdeci">double slopeCal(Point U, Point L)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="geometry_8hpp.html">geometry.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_050edd66366d13764f98250ef6db77f6.html">code</a></li><li class="navelem"><a class="el" href="dir_608802f3b07e3dc3b8794120c4bf9009.html">includes</a></li><li class="navelem"><b>geometry.hpp</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

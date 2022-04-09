@@ -25,28 +25,25 @@
 var NAVTREE =
 [
   [ "DAA Assignment", "index.html", [
-    [ "Implementation of Algorithm for Reporting and Counting Geometric Intersections", "md__r_e_a_d_m_e.html", [
-      [ "Phase-1", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Reference", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-      [ "Contributing", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
-      [ "Project Team - Team", "md__r_e_a_d_m_e.html#autotoc_md4", null ]
+    [ "Bentley-Ottmann Algorithm - Line Intersections", "md_code_includes__r_e_a_d_m_e.html", [
+      [ "Project Team - Team", "md_code_includes__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Implementation of Algorithm", "md_code_includes__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Building and Running", "md_code_includes__r_e_a_d_m_e.html#autotoc_md3", null ],
+      [ "Testing and Visualization", "md_code_includes__r_e_a_d_m_e.html#autotoc_md4", null ],
+      [ "Performance Analysis", "md_code_includes__r_e_a_d_m_e.html#autotoc_md5", null ],
+      [ "Reference", "md_code_includes__r_e_a_d_m_e.html#autotoc_md6", null ],
+      [ "Contributing", "md_code_includes__r_e_a_d_m_e.html#autotoc_md7", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Functions", "functions_func.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Enumerations", "globals_enum.html", null ]
-      ] ]
+      [ "File List", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];

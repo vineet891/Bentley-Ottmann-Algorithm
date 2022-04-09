@@ -10,10 +10,8 @@ var class_event_tree =
     [ "inOrder", "class_event_tree.html#a21b98458d63fbf767bf719f363b57a51", null ],
     [ "insertPoint", "class_event_tree.html#aeccc59eb4cb64deb0e1580335db22d1f", null ],
     [ "insertTree", "class_event_tree.html#a501542615e009410c85a69134e24d54a", null ],
-    [ "isEmpty", "class_event_tree.html#ad504f3103933d2037e1c9d7420391a88", null ],
     [ "postOrder", "class_event_tree.html#a4d05bd8b56388b7f66d99d08119144ea", null ],
     [ "preOrder", "class_event_tree.html#ab5aa6f18f4f6dbdd39a281f6664744a1", null ],
     [ "printNode", "class_event_tree.html#a54c40db82cd64fae6a584fc6b89b6a8f", null ],
-    [ "searchTree", "class_event_tree.html#a859cf4a98d670c435598e3eb98f181f7", null ],
-    [ "root", "class_event_tree.html#aee0f3d30440f6b162fe460010aaa6ed0", null ]
+    [ "searchTree", "class_event_tree.html#a859cf4a98d670c435598e3eb98f181f7", null ]
 ];
